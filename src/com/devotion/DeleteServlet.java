@@ -17,19 +17,11 @@ public class DeleteServlet extends HttpServlet {
 
     protected void doGet(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
         try{
-            String drivername = "com.mysql.cj.jdbc.Driver";
-            Class.forName(drivername);
-            // 数据库连接字符串
-            String url = "jdbc:mysql://localhost:3306/SongYadong?useUnicode=true&characterEncoding=utf8&useSSL=false&serverTimezone=GMT";
+            TwibberDao td = new TwibberDao();
+            td.executeDelForList(Integer.parseInt(request.getParameter("id")));
 
-            Connection con = DriverManager.getConnection(url, "root", "990325");
-            Statement statement = con.createStatement();
-            PreparedStatement ps =con.prepareStatement("delete from Twibber where id =" +
-                    request.getParameter("id"));
-            ps.executeUpdate();
-
-
-            response.sendRedirect("/devotion/Twibber");
+            request.getRequestDispatcher("/temp.jsp").forward(request,
+                    response);
 
         }
         catch (Exception ex)

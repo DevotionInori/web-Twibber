@@ -95,6 +95,11 @@
   <body>
 
   <form method="post" action="/devotion/Add">
+    <div style="background: white;opacity: 0.8">
+      <a>Devotion的博客</a>
+      <a href="index.jsp" style="margin-left: 80%">Devotion</a>
+      <a href="index.jsp" >退出</a>
+    </div>
     <div class="twibber_main" align="center">
       <div style="margin-top: 50px;width: 600px;background: cornsilk;height: 180px;opacity: 0.5;border-radius: 10px">
         <div align="left" style="margin-left: 10px" >
